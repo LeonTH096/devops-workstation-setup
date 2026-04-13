@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # 07-verify.sh — Full environment verification
 source "$(dirname "$0")/common.sh"
+set +e
 
 header "DevOps Project 2026 — Environment Verification"
 
