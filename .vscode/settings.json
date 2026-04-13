@@ -1,0 +1,44 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[hcl]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "yaml.schemas": {
+    "kubernetes": ["**/templates/**/*.yaml", "**/manifests/**/*.yaml"],
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml"
+  },
+
+  "terraform.languageServer.enable": true,
+  "terraform.validation.enableEnhancedValidation": true,
+
+  "files.exclude": {
+    "**/.terraform": true,
+    "**/.terragrunt-cache": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/.terraform": true,
+    "**/.terragrunt-cache": true
+  }
+}
