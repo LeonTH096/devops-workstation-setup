@@ -80,6 +80,9 @@ if ! print_status terraform "$MIN_TF" 2>/dev/null; then
 fi
 
 # ─── Terragrunt ──────────────────────────────────────────────────────────────
+# PINNED: v1.0.0 — first stable release (March 30, 2026).
+# Does NOT auto-update to newer versions. IaC tools upgrading unexpectedly breaks production.
+# To upgrade: change TG_TARGET below, then run 'make core'.
 MIN_TG="1.0.0"
 TG_TARGET="v1.0.0"
 
@@ -98,7 +101,8 @@ if ! print_status terragrunt "$MIN_TG" 2>/dev/null; then
 fi
 
 # ─── kubectl ─────────────────────────────────────────────────────────────────
-# Pin to 1.31.x to match EKS cluster version
+# PINNED: 1.31.x — must match EKS cluster version (K8s allows ±1 minor version skew).
+# When you upgrade EKS to 1.32, change "stable-1.31" below to "stable-1.32", then run 'make core'.
 MIN_KUBECTL="1.31.0"
 
 install_kubectl() {

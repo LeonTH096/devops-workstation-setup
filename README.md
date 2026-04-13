@@ -1,6 +1,6 @@
 # DevOps Workstation Setup
 
-Automated, idempotent development environment setup for the **DevOps Project 2026** portfolio.
+Automated, idempotent development environment setup.
 
 One command installs and configures every tool needed to build production-grade Kubernetes infrastructure on AWS with Terraform, Terragrunt, Helm, and GitHub Actions CI/CD.
 
