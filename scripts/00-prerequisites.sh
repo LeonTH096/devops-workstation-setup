@@ -9,7 +9,7 @@ PACKAGES=(
   curl wget unzip git jq gnupg
   software-properties-common apt-transport-https
   ca-certificates lsb-release make tree
-  bash-completion htop fzf
+  bash-completion htop
 )
 
 MISSING=()
@@ -49,4 +49,17 @@ if ! cmd_exists batcat && ! cmd_exists bat; then
   success "bat installed"
 else
   success "bat already installed"
+fi
+
+# fzf (fuzzy finder) — source install at ~/.fzf
+# Why source, not apt: Ubuntu 24.04 ships fzf 0.44 which doesn't support
+# `fzf --zsh` (added in 0.48). Source install always tracks latest, generates
+# ~/.fzf.zsh automatically, and updates via `cd ~/.fzf && git pull && ./install`.
+if [ -d "$HOME/.fzf" ] && [ -x "$HOME/.fzf/bin/fzf" ]; then
+  success "fzf already installed from source ($($HOME/.fzf/bin/fzf --version | awk '{print $1}'))"
+else
+  info "Installing fzf from source..."
+  git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
+  "$HOME/.fzf"/install --key-bindings --completion --no-update-rc
+  success "fzf installed from source ($($HOME/.fzf/bin/fzf --version | awk '{print $1}'))"
 fi
