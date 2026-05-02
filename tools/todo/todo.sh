@@ -34,7 +34,27 @@ case "$1" in
       echo ""
     fi
     ;;
+  help)
+    echo ""
+    echo "📋 todo — Terminal Task Manager"
+    echo ""
+    echo "Usage: todo <command>"
+    echo ""
+    echo "Commands:"
+    echo "  add \"task\"       Add a new task"
+    echo "  list             List all tasks (default)"
+    echo "  done <number>    Mark task as done"
+    echo "  remove <number>  Remove a task permanently"
+    echo "  clear-done       Remove all completed tasks"
+    echo "  help             Show this help message"
+    echo ""
+    echo "Examples:"
+    echo "  todo add \"Rewrite GitHub Profile README.md\""
+    echo "  todo done 1"
+    echo "  todo remove 2"
+    echo ""
+    ;;
   *)
-    echo "Commands: add | done | remove | clear-done | list"
+    echo "Unknown command: $1 — run 'todo help' for usage"
     ;;
 esac

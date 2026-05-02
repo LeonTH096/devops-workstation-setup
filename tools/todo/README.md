@@ -28,11 +28,31 @@ todo list                     # List all tasks (default if no command given)
 todo done <number>            # Mark task as done
 todo remove <number>          # Remove a task permanently
 todo clear-done               # Remove all completed tasks
+todo help                     # Show help message
 ```
 
 ## Example Session
 
 ```
+$ todo help
+
+📋 todo — Terminal Task Manager
+
+Usage: todo <command>
+
+Commands:
+  add "task"       Add a new task
+  list             List all tasks (default)
+  done <number>    Mark task as done
+  remove <number>  Remove a task permanently
+  clear-done       Remove all completed tasks
+  help             Show this help message
+
+Examples:
+  todo add "Rewrite GitHub Profile README.md"
+  todo done 1
+  todo remove 2
+
 $ todo add "Rewrite GitHub Profile README.md"
 Added: Rewrite GitHub Profile README.md
 
