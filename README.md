@@ -174,6 +174,10 @@ devops-workstation-setup/
 │   ├── 05-vscode.sh            # VS Code extensions
 │   ├── 06-shell-config.sh      # Shell env vars, aliases, completions
 │   └── 07-verify.sh            # Full verification report
+├── tools/
+│   └── todo/
+│       ├── todo.sh             # Persistent terminal task manager CLI
+│       └── README.md           # Usage and installation instructions
 ├── .vscode/
 │   ├── settings.json           # Workspace settings (copy to your project)
 │   └── extensions.json         # Extension recommendations
@@ -192,6 +196,16 @@ Each script follows the same pattern:
 5. **Verify** — prints the installed version with a green `[OK]` status.
 
 This makes every script **idempotent**: running it twice produces the same result without errors.
+
+## Tools
+
+Beyond the automated setup scripts, this repo includes standalone utilities for day-to-day workflow:
+
+| Tool | Location | Purpose |
+|------|----------|---------|
+| todo | `tools/todo/` | Persistent terminal task manager — add, complete, and remove tasks from the CLI |
+
+See each tool's `README.md` for installation and usage details.
 
 ## Customization
 
